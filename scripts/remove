@@ -30,9 +30,6 @@ then
 	yunohost service remove avahi-daemon
 fi
 
-# Delete User from Samba
-ynh_exec_warn_less smbpasswd -x $app
-
 # Remove the log files
 ynh_secure_remove --file="/etc/smb/smb.d/$app.conf"
 ynh_secure_remove --file="/etc/avahi/services/$app.service"

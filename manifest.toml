@@ -5,7 +5,7 @@ name = "Time Machine"
 description.en = "Configure the server as a Time Machine backup target"
 description.fr = "Configurer le serveur comme cible de sauvegarde Time Machine"
 
-version = "1.0~ynh7"
+version = "2.0~ynh7"
 
 maintainers = ["Navan Chauhan"]
 
@@ -17,11 +17,11 @@ code = "https://github.com/YunoHost-Apps/timemachine_ynh"
 [integration]
 yunohost = ">= 11.2"
 architectures = "all"
-multi_instance = true
+multi_instance = false
 
-ldap = false
+ldap = "not_relevant"
 
-sso = false
+sso = "not_relevant"
 
 disk = "50M"
 ram.build = "50M"
@@ -32,14 +32,6 @@ ram.runtime = "50M"
     [install.init_main_permission]
     type = "group"
     default = "visitors"
-
-    [install.admin]
-    type = "user"
-
-    [install.password]
-    help.en = "Password to access the Time Machine"
-    help.fr = "Mot de passe pour accéder à Time Machine"
-    type = "password"
 
 [resources]
     [resources.system_user]

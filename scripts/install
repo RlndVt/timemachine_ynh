@@ -14,8 +14,6 @@ source /usr/share/yunohost/helpers
 # RETRIEVE ARGUMENTS FROM THE MANIFEST
 #=================================================
 
-admin_mail=$(ynh_user_get_info --username=$admin --key=mail)
-
 #=================================================
 # STANDARD MODIFICATIONS
 #=================================================
@@ -33,9 +31,6 @@ ynh_script_progression --message="Adding a configuration file..." --weight=1
 samba_sysadmin_setup
 ynh_add_config --template="smb.conf" --destination="/etc/smb/smb.d/$app.conf"
 ynh_add_config --template="avahi-samba.service" --destination="/etc/avahi/services/$app.service"
-
-# Create a samba user
-(echo "$password"; echo "$password") | ynh_exec_warn_less smbpasswd -s -a "$app"
 
 # Update samba configuration
 samba_sysadmin_update
