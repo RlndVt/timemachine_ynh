@@ -31,7 +31,7 @@ ram.runtime = "50M"
 
     [install.init_main_permission]
     type = "group"
-    default = "visitors"
+    default = "all_users"
 
 [resources]
     [resources.system_user]
@@ -40,8 +40,7 @@ ram.runtime = "50M"
 
     [resources.data_dir]
 
-    # [resources.permissions]
-    # main.url = "/"
+    [resources.permissions]
 
     [resources.ports]
 
