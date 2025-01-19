@@ -41,6 +41,12 @@ ram.runtime = "50M"
     help.fr = "Mot de passe pour accéder à Time Machine"
     type = "password"
 
+    [install.max_size]
+    help.en = "Maximum size of Time Machine backup in GB. Typical recommendation is 2-5x the source data set size. Specify 0 for no limit."
+    help.fr = "Taille maximale de la sauvegarde Time Machine en Go. Il est généralement recommandé de prévoir une taille de 2 à 5 fois celle des données source. Indiquez 0 pour aucune limite."
+    type = "number"
+    default = 100
+
 [resources]
     [resources.system_user]
 

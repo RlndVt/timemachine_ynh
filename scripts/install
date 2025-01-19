@@ -34,6 +34,8 @@ samba_sysadmin_setup
 ynh_add_config --template="smb.conf" --destination="/etc/smb/smb.d/$app.conf"
 ynh_add_config --template="avahi-samba.service" --destination="/etc/avahi/services/$app.service"
 
+time_machine_activate_max_size $max_size "/etc/smb/smb.d/$app.conf"
+
 # Create a samba user
 (echo "$password"; echo "$password") | ynh_exec_warn_less smbpasswd -s -a "$app"
 
