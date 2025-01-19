@@ -23,7 +23,7 @@ ldap = "not_relevant"
 
 sso = "not_relevant"
 
-disk = "50M"
+disk = "100G"
 ram.build = "50M"
 ram.runtime = "50M"
 
